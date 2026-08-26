@@ -1,5 +1,5 @@
 async function buscarFilmes() {
-    const resp = await fetch("https://atividade-em-dupla-frontend.vercel.app/todosfilmes")
+    const resp = await fetch("http://localhost:3000/todosfilmes")
     const filmes = await resp.json()
 
     const sectionFilmes = document.querySelector(".filmes")
