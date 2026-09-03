@@ -1,8 +1,8 @@
 async function cadastrarFilme() {
-    const title = document.getElementById("titulo")
-    const gender = document.getElementById("genero")
-    const ageLimit = document.getElementById("classificacaoEtaria")
-    const duration = document.getElementById("duracao")
+    const titulo = document.getElementById("titulo")
+    const genero = document.getElementById("genero")
+    const classificacaoEtaria = document.getElementById("classificacaoEtaria")
+    const duracao = document.getElementById("duracao")
 
     if (titulo.value === "" || genero.value === "" || classificacaoEtaria.value === "" || duracao.value === "") {
         alert("Preencha todos os campos!")
@@ -10,13 +10,13 @@ async function cadastrarFilme() {
     }
 
     const filme = {
-        title: titulo.value,
-        gender: genero.value,
-        ageLimit: classificacaoEtaria.valueAsNumber,
-        duration: duracao.valueAsNumber
+        titulo: titulo.value,
+        genero: genero.value,
+        classificacaoEtaria: classificacaoEtaria.valueAsNumber,
+        duracao: duracao.valueAsNumber
     }
 
-    const resposta = await fetch("https://backend-atividade-em-dupla.vercel.app/criarfilme", {
+    const resposta = await fetch("http://localhost:3000/criarfilme", {
         method: "POST",
         headers: {
             "Content-type": "application/json"
