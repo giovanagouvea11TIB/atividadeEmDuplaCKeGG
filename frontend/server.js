@@ -21,7 +21,7 @@ async function buscarFilmes() {
 buscarFilmes()
 
 async function apagarFilme(id) {
-    const respostaDeSucessoAoApagar = await fetch(`http://localhost:3000/delete/${id}`, { method: "DELETE" })
+    const respostaDeSucessoAoApagar = await fetch(`https://backend-atividade-em-dupla.vercel.app/delete/${id}`, { method: "DELETE" })
     const mensagem = await respostaDeSucessoAoApagar.json()
 
     alert(mensagem.message)
