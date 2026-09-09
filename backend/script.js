@@ -84,6 +84,23 @@ app.put ("/editarfilme/:id", (req, res) => {
     })
 })
 
+app.delete("/deletarfilme/:id", (req, res) => {
+    const { id } = req.params
+
+    const deleteCommand = "DELETE FROM filmes_GiovanaGouveaCinthiaKarolina WHERE id=?"
+
+    sql.query(deleteCommand, [id], (error) => {
+        if (error) {
+            console.log(error)
+            return
+        }
+
+        res.json({
+            message: "Filme apagado com sucesso!"
+        })
+    })
+})
+
 app.listen (3000, ()=>{
     console.log("Servidor On")
 })
