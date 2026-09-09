@@ -28,3 +28,5 @@ async function apagarFilme(id) {
 
     window.location.reload()
 }
+
+apagarFilme()
